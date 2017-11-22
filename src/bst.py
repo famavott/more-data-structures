@@ -79,7 +79,7 @@ class Tree(object):
         return self._size
 
     def contains(self, value):
-        """."""
+        """Return boolean if value passed is in the tree."""
         return bool(self.search(value))
 
     def depth(self):
