@@ -60,3 +60,63 @@ def test_size_method_with_no_nodes():
     from bst import Tree
     new_tree = Tree()
     new_tree.size() == 0
+
+
+def test_contains_returns_true(bst_three):
+    """Test contains returns true when value in tree."""
+    assert bst_three.contains(9) is True
+
+
+def test_contains_returns_false(bst_three):
+    """Test contains returns true when value in tree."""
+    assert bst_three.contains(100) is False
+
+
+def test_depth_for_one_level(bst_three):
+    """Test depth levels for tree of three."""
+    assert bst_three.levels == 1
+
+
+def test_depth_for_two_levels(bst_three):
+    """Test depth levels for tree of four."""
+    bst_three.insert(6)
+    bst_three.levels == 2
+
+
+def test_depth_if_only_root_exists():
+    """Test depth of zero if only root exists."""
+    from bst import Tree
+    new_tree = Tree(2)
+    new_tree.levels == 0
+
+
+def test_balance_of_even_tree(bst_three):
+    """Test balance of balanced tree with three nodes total."""
+    bst_three.balance() == 0
+
+
+def test_balance_greater_on_left(bst_three):
+    """Test balance when left is deeper than right."""
+    bst_three.insert(6)
+    bst_three.balance == 1
+
+
+def test_balance_greater_on_right(bst_three):
+    """Test balance when right is deeper than right."""
+    bst_three.insert(17)
+    bst_three.balance == -1
+
+
+def test_balance_negative_two(bst_three):
+    """Test balance when right is deeper than right by two levels."""
+    bst_three.insert(17)
+    bst_three.insert(81)
+    bst_three.balance == -2
+
+
+def test_if_non_int_or_float_passed_raises_error():
+    """Test if typeerror is raised when str passed to insert method."""
+    from bst import Tree
+    new_tree = Tree()
+    with pytest.raises(TypeError):
+        new_tree.insert('word')
