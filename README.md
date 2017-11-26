@@ -27,3 +27,4 @@ Balance(self): Returns an interger denoting the balance of the tree. Trees that 
 
 Time Complexity: O(1)
 
+## Binary Search Tree Traversals

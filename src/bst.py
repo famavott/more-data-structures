@@ -90,6 +90,19 @@ class Tree(object):
         """Return an integer to determine how balanced the tree is."""
         return self.left_level - self.right_level
 
+    def inorder(self):
+        """Return values of tree using in-order traversal."""
+        stack = []
+        curr = self.root
+        while curr or stack:
+            if curr:
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                yield curr.data
+                curr = curr.right
+
 
 if __name__ == '__main__':  # pragma no cover
     import timeit as ti
