@@ -141,6 +141,18 @@ def test_preorder_returns_correct_first_num(big_tree):
 
 
 def test_preorder_full_list_of_nums(big_tree):
-    """Test if preorder returns all in numbers in tree."""
+    """Test if preorder returns all numbers in tree."""
     gen_tree = big_tree.preorder()
     assert [n for n in gen_tree] == [10, 6, 4, 2, 8, 12, 16, 14]
+
+
+def test_bfs_returns_correct_first_num(big_tree):
+    """Test if bfs returns correct first digit(root)."""
+    gen_tree = big_tree.breadth_first()
+    assert next(gen_tree) == 10
+
+
+def test_bfs_full_list_nums(big_tree):
+    """Test if bfs returns all numbers in tree."""
+    gen_tree = big_tree.breadth_first()
+    assert [n for n in gen_tree] == [10, 6, 12, 4, 8, 16, 2, 14]

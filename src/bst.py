@@ -118,6 +118,23 @@ class Tree(object):
                 except IndexError:
                     curr = None
 
+    def breadth_first(self):
+        """Return values of tree using breadth first search."""
+        stack = []
+        curr = self.root
+        while curr or stack:
+            if curr:
+                yield curr.data
+                stack.extend([curr.left, curr.right])
+                curr = stack.pop(0)
+            else:
+                curr = stack.pop(0)
+
+    def postorder(self):
+        """Return values of tree using post-order search."""
+        stack = []
+        current = self.root
+
 
 if __name__ == '__main__':  # pragma no cover
     import timeit as ti

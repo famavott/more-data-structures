@@ -28,3 +28,19 @@ Balance(self): Returns an interger denoting the balance of the tree. Trees that 
 Time Complexity: O(1)
 
 ## Binary Search Tree Traversals
+
+In-Order(self): Returns a generator that will return the values in the tree using in-order traversal, one at a time.
+
+Time Complexity: O(n)
+
+Pre-Order(self): Returns a generator that will return the values in the tree using pre-order traversal, one at a time.
+
+Time Complexity: O(n)
+
+Breadth-First(self): Returns a generator that will return the values in the tree using breadth-first traversal, one at a time.
+
+Time Complexity: O(n)
+
+Post-Order(self): Returns a generator that will return the values in the tree using post_order traversal, one at a time.
+
+Time Complexity: O(n)
