@@ -120,3 +120,39 @@ def test_if_non_int_or_float_passed_raises_error():
     new_tree = Tree()
     with pytest.raises(TypeError):
         new_tree.insert('word')
+
+
+def test_inorder_returns_correct_first_num(big_tree):
+    """Test if inorder returns correct digit for big tree."""
+    gen_tree = big_tree.inorder()
+    assert next(gen_tree) == 2
+
+
+def test_inorder_full_list_of_nums(big_tree):
+    """Test if inorder returns all numbers in tree."""
+    gen_tree = big_tree.inorder()
+    assert [n for n in gen_tree] == [2, 4, 6, 8, 10, 12, 14, 16]
+
+
+def test_preorder_returns_correct_first_num(big_tree):
+    """Test if preorder returns correct first digit(root)."""
+    gen_tree = big_tree.preorder()
+    assert next(gen_tree) == 10
+
+
+def test_preorder_full_list_of_nums(big_tree):
+    """Test if preorder returns all numbers in tree."""
+    gen_tree = big_tree.preorder()
+    assert [n for n in gen_tree] == [10, 6, 4, 2, 8, 12, 16, 14]
+
+
+def test_bfs_returns_correct_first_num(big_tree):
+    """Test if bfs returns correct first digit(root)."""
+    gen_tree = big_tree.breadth_first()
+    assert next(gen_tree) == 10
+
+
+def test_bfs_full_list_nums(big_tree):
+    """Test if bfs returns all numbers in tree."""
+    gen_tree = big_tree.breadth_first()
+    assert [n for n in gen_tree] == [10, 6, 12, 4, 8, 16, 2, 14]
