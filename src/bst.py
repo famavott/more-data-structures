@@ -103,6 +103,21 @@ class Tree(object):
                 yield curr.data
                 curr = curr.right
 
+    def preorder(self):
+        """Return values of tree using pre-order traversal."""
+        stack = []
+        curr = self.root
+        while curr:
+            curr.right and stack.append(curr.right)
+            yield curr.data
+            if curr.left:
+                curr = curr.left
+            else:
+                try:
+                    curr = stack.pop()
+                except IndexError:
+                    curr = None
+
 
 if __name__ == '__main__':  # pragma no cover
     import timeit as ti
