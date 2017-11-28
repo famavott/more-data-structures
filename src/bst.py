@@ -63,6 +63,10 @@ class Tree(object):
         else:
             raise TypeError('Data passed must be an int or float.')
 
+    # def delete(self, data):
+    #     """Remove node from tree if present."""
+    #     target = self.search(data)
+
     def search(self, data):
         """Find node with data passed as an argument."""
         curr = self.root
@@ -130,10 +134,10 @@ class Tree(object):
             else:
                 curr = stack.pop(0)
 
-    def postorder(self):
-        """Return values of tree using post-order search."""
-        stack = []
-        current = self.root
+    # def postorder(self):
+    #     """Return values of tree using post-order search."""
+    #     stack = []
+    #     current = self.root
 
 
 if __name__ == '__main__':  # pragma no cover
