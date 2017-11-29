@@ -156,3 +156,13 @@ def test_bfs_full_list_nums(big_tree):
     """Test if bfs returns all numbers in tree."""
     gen_tree = big_tree.breadth_first()
     assert [n for n in gen_tree] == [10, 6, 12, 4, 8, 16, 2, 14]
+
+
+def test_parent_attr_exits(bst_three):
+    """Test value of root that is parent to left child."""
+    assert bst_three.root.left.parent.data == 9
+
+
+def test_parent_attr_nonexistent_for_root(bst_three):
+    """Test value of parent of root is none."""
+    assert bst_three.root.parent is None

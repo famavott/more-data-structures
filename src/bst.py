@@ -10,6 +10,7 @@ class Node(object):
         self.left = None
         self.right = None
         self.depth = 0
+        self.parent = None
 
 
 class Tree(object):
@@ -44,6 +45,7 @@ class Tree(object):
                     if curr.left is None:
                         new_node.depth = curr.depth + 1
                         curr.left = new_node
+                        new_node.parent = curr
                         self._size += 1
                         break
                     curr = curr.left
@@ -51,6 +53,7 @@ class Tree(object):
                     if curr.right is None:
                         new_node.depth = curr.depth + 1
                         curr.right = new_node
+                        new_node.parent = curr
                         self._size += 1
                         break
                     curr = curr.right
@@ -63,9 +66,12 @@ class Tree(object):
         else:
             raise TypeError('Data passed must be an int or float.')
 
-    # def delete(self, data):
-    #     """Remove node from tree if present."""
-    #     target = self.search(data)
+    def delete(self, data):
+        """Remove node from tree if present."""
+        if self.root is None:
+            return
+        target = self.search(data)
+
 
     def search(self, data):
         """Find node with data passed as an argument."""
