@@ -166,3 +166,24 @@ def test_parent_attr_exits(bst_three):
 def test_parent_attr_nonexistent_for_root(bst_three):
     """Test value of parent of root is none."""
     assert bst_three.root.parent is None
+
+
+def test_del_empty_tree():
+    """Test deletion from empty tree returns None."""
+    from bst import Tree
+    new_bst = Tree()
+    assert new_bst.delete(3) is None
+
+
+def test_del_nonexistent_val(bst_three):
+    """Test deletion of non-existent value returns None."""
+    assert bst_three.delete(7) is None
+
+
+def test_del_root_in_single_node_tree():
+    """Test deletion of root in tree of one node."""
+    from bst import Tree
+    new_bst = Tree()
+    new_bst.insert(10)
+    new_bst.delete(10)
+    assert new_bst.root is None
