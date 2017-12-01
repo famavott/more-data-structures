@@ -187,3 +187,35 @@ def test_del_root_in_single_node_tree():
     new_bst.insert(10)
     new_bst.delete(10)
     assert new_bst.root is None
+
+
+def test_del_leaf_(bst_three):
+    """Test deletion of leaf."""
+    bst_three.delete(83)
+    assert bst_three.root.right is None
+    assert bst_three._size == 2
+
+
+def test_del_node_with_one_child(big_tree):
+    """Test deletion of node with only one child."""
+    big_tree.delete(4)
+    assert big_tree.root.left.left.data == 2
+
+
+def test_del_node_with_two_children(big_tree):
+    """Test deletion of node with two children."""
+    big_tree.delete(6)
+    assert big_tree.root.left.left.data == 4
+
+
+def test_del_root_big_tree(big_tree):
+    """Test deletion of root in big tree."""
+    big_tree.delete(10)
+    assert big_tree.root.data == 12
+
+
+def test_del_root_right_left_swap(big_tree):
+    """Test that root.right.left swaps with root when root deleted."""
+    big_tree.insert(11)
+    big_tree.delete(10)
+    assert big_tree.root.data == 11
