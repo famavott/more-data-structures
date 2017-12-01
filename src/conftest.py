@@ -16,3 +16,19 @@ def big_tree():
     from bst import Tree
     big_tree = Tree((10, 12, 16, 6, 8, 4, 14, 2))
     return big_tree
+
+
+@pytest.fixture
+def bst_left_imbalanced():
+    """Bst that extends left."""
+    from bst import BST
+    test_bst = BST((10, 9, 8, 7, 6, 5, 4, 3, 2, 1))
+    return test_bst
+
+
+@pytest.fixture
+def bst_right_imbalanced():
+    """Bst that extends right."""
+    from bst import BST
+    test_bst = BST((1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+    return test_bst

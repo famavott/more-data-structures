@@ -1,4 +1,6 @@
-# Data Structures (2nd Half of Class)
+[![Build Status](https://travis-ci.org/famavott/more-data-structures.svg?branch=deletion)](https://travis-ci.org/famavott/more-data-structures)
+
+# Data Structures
 
 ## Binary Search Tree
 A data structure made up of nodes where each node has no more than two child nodes. The left child is always less in value than the parent, and the right child is always greater in value than the parent.
