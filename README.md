@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/famavott/more-data-structures.svg?branch=deletion)](https://travis-ci.org/famavott/more-data-structures)
+[![Build Status](https://travis-ci.org/famavott/more-data-structures.svg?branch=master)](https://travis-ci.org/famavott/more-data-structures)
 
 # Data Structures
 
@@ -44,5 +44,11 @@ Breadth-First(self): Returns a generator that will return the values in the tree
 Time Complexity: O(n)
 
 Post-Order(self): Returns a generator that will return the values in the tree using post_order traversal, one at a time.
+
+Time Complexity: O(n)
+
+## Binary Search Tree Deletion
+
+Delete(self, data): Removes a value if present, otherwise returns nothing. Returns None in all cases.
 
 Time Complexity: O(n)
