@@ -32,3 +32,11 @@ def bst_right_imbalanced():
     from bst import BST
     test_bst = BST((1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
     return test_bst
+
+
+@pytest.fixture
+def empty_hash():
+    """Initialize empty hash table."""
+    from hash import HashTable
+    test_hash = HashTable()
+    return test_hash

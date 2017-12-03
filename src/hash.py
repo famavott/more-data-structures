@@ -10,12 +10,14 @@ class HashTable(object):
         self.hash_type = hash_type
         self.buckets = []
         if hash_type not in ('additive', 'oat'):
-            raise ValueError('Hash funciton unsupported')
+            raise NameError('Hash funciton unsupported')
         for i in range(size):
             self.buckets.append([])
 
     def _hash(self, key):
         """Hash string from user on get method."""
+        if type(key) is not str:
+            raise TypeError('Key must be a string')
         if self.hash_type == 'additive':
             hash = 0
             for char in key:
@@ -51,4 +53,4 @@ class HashTable(object):
             for item in self.buckets[idx]:
                 if item[0] == key:
                     return item[1]
-            raise KeyError('Key not found')
+        raise KeyError('Key not found')
