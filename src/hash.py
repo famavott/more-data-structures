@@ -22,6 +22,7 @@ class HashTable(object):
             hash = 0
             for char in key:
                 hash += ord(char)
+            print(hash % self.size)
             return hash % self.size
         if self.hash_type == 'oat':
             hash = 0
@@ -32,6 +33,7 @@ class HashTable(object):
             hash += hash << 3
             hash ^= hash >> 11
             hash += hash << 15
+            print(hash % self.size)
             return hash % self.size
 
     def set(self, key, val):

@@ -1,4 +1,6 @@
 """Testing for hash table tree."""
+import os
+
 import pytest
 
 
@@ -60,3 +62,19 @@ def test_key_not_found_error_raises(empty_hash):
     empty_hash.set('andy', 32)
     with pytest.raises(KeyError):
         empty_hash.get('bob')
+
+
+def test_dictionary_words():
+    """Test built-in unix dictionary of words."""
+    from hash import HashTable
+    table = HashTable()
+    with open('/usr/share/dict/words', 'r') as dictionary:
+        all_words = dictionary.read()
+        clean_words = all_words.split('\n')
+    clean_words = clean_words[:500]
+    for i in range(len(clean_words)):
+        table.set(clean_words[i], clean_words[i])
+    assert table.get('aardvark') == 'aardvark'
+    assert table.get('abandon') == 'abandon'
+    with pytest.raises(KeyError):
+        table.get('house')
