@@ -52,3 +52,17 @@ Time Complexity: O(n)
 Delete(self, data): Removes a value if present, otherwise returns nothing. Returns None in all cases.
 
 Time Complexity: O(n)
+
+## Hash Table
+
+hash(self, data): Hashes the key provided, and executes either additive, or one-at-time based on input.
+
+Time Complexity: O(n)
+
+set(self, key, val): Adds a key/value pair to the table. Overwrites the existing value if key is already present.
+
+Time Complexity: O(n)
+
+get(self, key): Returns value associated with key. Raises an error if key is not found.
+
+Time Complexity: O(n)
