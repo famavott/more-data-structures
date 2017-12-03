@@ -4,13 +4,15 @@
 class HashTable(object):
     """HashTable class."""
 
-    def __init__(self, size, hash_type='additive'):
+    def __init__(self, size=10, hash_type='additive'):
         """Create new HashTable object."""
         self.size = size
         self.hash_type = hash_type
         self.buckets = []
-        if self.hash_type != 'additive' or self.hash_type != 'oat':
-            raise ValueError("Cannot execute given hash type")
+        if hash_type not in ('additive', 'oat'):
+            raise ValueError('Hash funciton unsupported')
+        for i in range(size):
+            self.buckets.append([])
 
     def _hash(self, key):
         """Hash string from user on get method."""
@@ -34,13 +36,13 @@ class HashTable(object):
         """Add a key/val pair to HashTable."""
         idx = self._hash(key)
         pair = [key, val]
-        if self.buckets[idx] is None:
-            self.buckets[idx] = pair
+        if not self.buckets[idx]:
+            self.buckets[idx].append(pair)
         else:
             for item in self.buckets[idx]:
                 if item[0] == key:
                     item[1] = val
-            self.buckets[idx].append[pair]
+            self.buckets[idx].append(list(pair))
 
     def get(self, key):
         """Get value at given key."""
