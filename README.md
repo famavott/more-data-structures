@@ -66,3 +66,5 @@ Time Complexity: O(n)
 get(self, key): Returns value associated with key. Raises an error if key is not found.
 
 Time Complexity: O(n)
+
+## Trie
