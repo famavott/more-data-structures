@@ -74,3 +74,9 @@ Time Complexity: O(n)
 bubble_sort(input_list): Sorts a list, comparing each pair of adjacent items, and swaps them if they are in the wrong order. In this case, the wrong order would mean that the item greater than the other item is at a lower index in the list.
 
 Time Complexity: O(n^2)
+
+## Insertion Sort
+
+insert_sort(input_list): Sorts a list, iterating through each index, and then comparing that index's value against all of the indicies less than that index.
+
+Time Complexity: 0(n^2)
