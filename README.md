@@ -68,3 +68,9 @@ get(self, key): Returns value associated with key. Raises an error if key is not
 Time Complexity: O(n)
 
 ## Trie
+
+## Bubble Sort
+
+bubble_sort(input_list): Sorts a list, comparing each pair of adjacent items, and swaps them if they are in the wrong order. In this case, the wrong order would mean that the item greater than the other item is at a lower index in the list.
+
+Time Complexity: O(n^2)
