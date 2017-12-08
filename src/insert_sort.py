@@ -18,11 +18,11 @@ def insert_sort(input_list):
 if __name__ == '__main__':  # pragma no cover
     import timeit as ti
     sort_1 = [1, 2, 4, 9, 10, 11]
-    sort_2 = insert_sort([17, 9, 7, 4, 1, 0])
+    sort_2 = [17, 9, 7, 4, 1, 0]
 
-    time_1 = ti.timeit("insert_sort(sort_1)",
+    time_1 = ti.timeit("insert_sort(sort_1[:])",
                        setup="from __main__ import sort_1, insert_sort")
-    time_2 = ti.timeit("insert_sort(sort_2)",
+    time_2 = ti.timeit("insert_sort(sort_2[:])",
                        setup="from __main__ import sort_2, insert_sort")
     print("""
         Input: [1, 2, 4, 9, 10, 11]

@@ -24,9 +24,9 @@ if __name__ == '__main__':  # pragma no cover
     sort_1 = [1, 2, 4, 9, 10, 11]
     sort_2 = bubble_sort([17, 9, 7, 4, 1, 0])
 
-    time_1 = ti.timeit("bubble_sort(sort_1)",
+    time_1 = ti.timeit("bubble_sort(sort_1[:])",
                        setup="from __main__ import sort_1, bubble_sort")
-    time_2 = ti.timeit("bubble_sort(sort_2)",
+    time_2 = ti.timeit("bubble_sort(sort_2[:])",
                        setup="from __main__ import sort_2, bubble_sort")
     print("""
         Input: [1, 2, 4, 9, 10, 11]
