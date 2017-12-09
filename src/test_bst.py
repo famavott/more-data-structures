@@ -158,6 +158,27 @@ def test_bfs_full_list_nums(big_tree):
     assert [n for n in gen_tree] == [10, 6, 12, 4, 8, 16, 2, 14]
 
 
+def test_first_post_order_yields_correct_num(big_tree):
+    """Test if post first num yielded is 2."""
+    gen_tree = big_tree.postorder()
+    assert next(gen_tree) == 2
+
+
+def test_second_post_order_gen_yields_correct_num(big_tree):
+    """Test if post second num yielded is 4."""
+    gen_tree = big_tree.postorder()
+    next(gen_tree)
+    assert next(gen_tree) == 4
+
+
+def test_empty_bst_with_postorder_yields_empty_list():
+    """Test if empty tree yields empty list."""
+    from bst import Tree
+    empty_tree = Tree()
+    empty_gen = empty_tree.postorder()
+    assert [n for n in empty_gen] == []
+
+
 def test_post_traverses_entire_bst(big_tree):
     """Test if post order traverses tree in correct order."""
     gen_tree = big_tree.postorder()

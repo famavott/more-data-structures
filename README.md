@@ -41,6 +41,6 @@ Breadth-First(self): Returns a generator that will return the values in the tree
 
 Time Complexity: O(n)
 
-Post-Order(self): Returns a generator that will return the values in the tree using post_order traversal, one at a time.
+Post-Order(self): Returns a generator that will return the values in the tree using post-order traversal, one at a time.
 
 Time Complexity: O(n)
