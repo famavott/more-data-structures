@@ -1,4 +1,6 @@
-# Data Structures (2nd Half of Class)
+[![Build Status](https://travis-ci.org/famavott/more-data-structures.svg?branch=master)](https://travis-ci.org/famavott/more-data-structures)
+
+# Data Structures
 
 ## Binary Search Tree
 A data structure made up of nodes where each node has no more than two child nodes. The left child is always less in value than the parent, and the right child is always greater in value than the parent.
@@ -44,3 +46,37 @@ Time Complexity: O(n)
 Post-Order(self): Returns a generator that will return the values in the tree using post-order traversal, one at a time.
 
 Time Complexity: O(n)
+
+## Binary Search Tree Deletion
+
+Delete(self, data): Removes a value if present, otherwise returns nothing. Returns None in all cases.
+
+Time Complexity: O(n)
+
+## Hash Table
+
+hash(self, data): Hashes the key provided, and executes either additive, or one-at-time based on input.
+
+Time Complexity: O(n)
+
+set(self, key, val): Adds a key/value pair to the table. Overwrites the existing value if key is already present.
+
+Time Complexity: O(n)
+
+get(self, key): Returns value associated with key. Raises an error if key is not found.
+
+Time Complexity: O(n)
+
+## Trie
+
+## Bubble Sort
+
+bubble_sort(input_list): Sorts a list, comparing each pair of adjacent items, and swaps them if they are in the wrong order. In this case, the wrong order would mean that the item greater than the other item is at a lower index in the list.
+
+Time Complexity: O(n^2)
+
+## Insertion Sort
+
+insert_sort(input_list): Sorts a list, iterating through each index, and then comparing that index's value against all of the indicies less than that index.
+
+Time Complexity: 0(n^2)

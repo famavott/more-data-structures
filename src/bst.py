@@ -10,6 +10,7 @@ class Node(object):
         self.left = None
         self.right = None
         self.depth = 0
+        self.parent = None
 
 
 class Tree(object):
@@ -44,6 +45,7 @@ class Tree(object):
                     if curr.left is None:
                         new_node.depth = curr.depth + 1
                         curr.left = new_node
+                        new_node.parent = curr
                         self._size += 1
                         break
                     curr = curr.left
@@ -51,6 +53,7 @@ class Tree(object):
                     if curr.right is None:
                         new_node.depth = curr.depth + 1
                         curr.right = new_node
+                        new_node.parent = curr
                         self._size += 1
                         break
                     curr = curr.right
@@ -62,6 +65,56 @@ class Tree(object):
                 self.left_level += 1
         else:
             raise TypeError('Data passed must be an int or float.')
+
+    def delete(self, data):
+        """Remove node from tree if present."""
+        if not self.root or not isinstance(data, (int, float)):
+            return
+        target = self.search(data)
+        if not target:
+            return
+        if not target.left and not target.right:
+            self._size -= 1
+            if not target.parent:
+                self.root = None
+            elif target.data > target.parent.data:
+                    target.parent.right = None
+            else:
+                target.parent.left = None
+        elif target.left and target.right:
+            self._size -= 1
+            curr = target.right
+            while curr and curr.left:
+                curr = curr.left
+            if curr.right:
+                curr.parent.left = curr.right
+            if target.right != curr:
+                curr.right = target.right
+            curr.left = target.left
+            if not target.parent:
+                self.root = curr
+                curr.parent = None
+            else:
+                if target.data > target.parent.data:
+                    target.parent.right = curr
+                else:
+                    target.parent.left = curr
+                curr.parent = target.parent
+        else:
+            self._size -= 1
+            if target.left:
+                child = target.left
+            else:
+                child = target.right
+            if not target.parent:
+                self.root = child
+                child.parent = None
+            else:
+                child.parent = target.parent
+                if target.data > target.parent.data:
+                    target.parent.right = child
+                else:
+                    target.parent.left = child
 
     def search(self, data):
         """Find node with data passed as an argument."""
