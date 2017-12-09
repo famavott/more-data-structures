@@ -133,7 +133,22 @@ class Tree(object):
     def postorder(self):
         """Return values of tree using post-order search."""
         stack = []
-        current = self.root
+        curr = self.root
+        while curr or stack:
+            if curr:
+                if curr.right:
+                    stack.append(curr.right)
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                if stack and curr.right == stack[-1]:
+                    stack.pop()
+                    stack.append(curr)
+                    curr = curr.right
+                else:
+                    yield curr.data
+                    curr = None
 
 
 if __name__ == '__main__':  # pragma no cover

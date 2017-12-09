@@ -156,3 +156,9 @@ def test_bfs_full_list_nums(big_tree):
     """Test if bfs returns all numbers in tree."""
     gen_tree = big_tree.breadth_first()
     assert [n for n in gen_tree] == [10, 6, 12, 4, 8, 16, 2, 14]
+
+
+def test_post_traverses_entire_bst(big_tree):
+    """Test if post order traverses tree in correct order."""
+    gen_tree = big_tree.postorder()
+    assert [n for n in gen_tree] == [2, 4, 8, 6, 14, 16, 12, 10]
