@@ -80,3 +80,9 @@ Time Complexity: O(n^2)
 insert_sort(input_list): Sorts a list, iterating through each index, and then comparing that index's value against all of the indicies less than that index.
 
 Time Complexity: 0(n^2)
+
+## Merge Sort
+
+merge_sort(input_list): Recursively sorts through the first half of the input list, then resursively sorts through the second half. The sub-lists are then merged together, in order, to create an output list.
+
+Time Complexity: 0(n log(n))
