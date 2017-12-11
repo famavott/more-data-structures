@@ -32,8 +32,25 @@ class Trie(object):
                     curr.child_vals.append(new_node.val)
                     curr = new_node
                 else:
-                    idx = curr.child_vals.idx(letter)
-                    curr = curr.children[idx]
+                    index = curr.child_vals.index(letter)
+                    curr = curr.children[index]
             curr.children.append(Node('$', parent=curr))
             curr.child_vals.append('$')
             self._size += 1
+
+        def contains(self, word):
+            """Check if word exists in trie."""
+            curr = self.root
+            for letter in word:
+                visited = 0
+                for node in curr.children:
+                    if letter == node.val:
+                        curr = node
+                        break
+                    visited += 1
+                    if visited == len(curr.children):
+                        return False
+            for node in curr.children:
+                if node.val == '$':
+                    return True
+            return False
