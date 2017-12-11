@@ -44,3 +44,31 @@ def test_contains_if_word_not_in_trie(empty_trie):
     """Test if word in trie returns true."""
     empty_trie.insert('balance')
     assert empty_trie.contains('ball') is False
+
+
+def test_size(empty_trie):
+    """Test if size with multiple words inserted returns number."""
+    empty_trie.insert('balance')
+    empty_trie.insert('ball')
+    empty_trie.insert('balk')
+    empty_trie.insert('ansible')
+    assert empty_trie._size == 4
+
+
+def test_size_with_remove(empty_trie):
+    """Test if size after remove returns correct number."""
+    empty_trie.insert('balance')
+    empty_trie.insert('ball')
+    empty_trie.insert('balk')
+    empty_trie.insert('ballfield')
+    empty_trie.remove('ball')
+    assert empty_trie._size == 3
+
+
+def test_remove_raises_error_if_not_present(empty_trie):
+    """Riase ValueError if word in in tree."""
+    empty_trie.insert('balance')
+    empty_trie.insert('ball')
+    empty_trie.insert('balk')
+    with pytest.raises(ValueError):
+        empty_trie.remove('ballfield')

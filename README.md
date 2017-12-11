@@ -69,6 +69,22 @@ Time Complexity: O(n)
 
 ## Trie
 
+Insert(self, val): Adds a word to the trie.
+
+Time Complexity: 0(n)
+
+Contains(self, val): Returns True or False if word is contained in trie.
+
+Time Complexity: 0(n^2)
+
+Size(self): Returns size of trie.
+
+Time Complexity: 0(1)
+
+Remove(self, val): Removes word from trie if it exists.
+
+Time Complexity: 0(n)
+
 ## Bubble Sort
 
 bubble_sort(input_list): Sorts a list, comparing each pair of adjacent items, and swaps them if they are in the wrong order. In this case, the wrong order would mean that the item greater than the other item is at a lower index in the list.

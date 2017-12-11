@@ -54,3 +54,29 @@ class Trie(object):
                 if node.val == '$':
                     return True
             return False
+
+        def size(self):
+            """Return size of tree."""
+            return self._size
+
+        def remove(self, word):
+            """Remove word from trie."""
+            word += '$'
+            delete_me = []
+            curr = self.root
+            for letter in word:
+                if letter in curr.child_vals:
+                    index = curr.child_vals.index(letter)
+                    curr = curr.children[index]
+                    delete_me.append(curr)
+                else:
+                    raise ValueError('Word is not in trie.')
+            rev_del = delete_me[::-1]
+            for node in rev_del:
+                if len(node.children) == 0:
+                    parent = node.parent
+                    parent.children.remove(node)
+                    parent.child_vals.remove(node.val)
+                else:
+                    break
+            self._size -= 1
