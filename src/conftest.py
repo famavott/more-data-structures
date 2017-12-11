@@ -40,3 +40,11 @@ def empty_hash():
     from hash import HashTable
     test_hash = HashTable()
     return test_hash
+
+
+@pytest.fixture
+def empty_trie():
+    """Initialize empty trie."""
+    from trie import Trie
+    test_trie = Trie()
+    return test_trie
