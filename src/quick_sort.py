@@ -3,16 +3,18 @@
 
 def quick_sort(input_list):
     """Quick sort function that accepts input_list."""
-    if len(input_list) <= 1:
-        return input_list
-    lesser, pivot, greater = partition(input_list)
-    return quick_sort(lesser) + [pivot] + quick_sort(greater)
-
-
-def partition(input_list):
-    """Divide input list into two halves with a pivot point."""
-    pivot = input_list[0]
-    seq = input_list[1:]
-    lesser = [x for x in seq if x <= pivot]
-    greater = [x for x in seq if x > pivot]
-    return lesser, pivot, greater
+    if isinstance(input_list, list):
+        if len(input_list) <= 1:
+            return input_list
+        less, equal, greater = [], [], []
+        pivot = input_list[0]
+        for num in input_list:
+            if num < pivot:
+                less.append(num)
+            elif num == pivot:
+                equal.append(num)
+            else:
+                greater.append(num)
+        return quick_sort(less) + [pivot] + quick_sort(greater)
+    else:
+        raise TypeError('Only lists can be passed into function.')
