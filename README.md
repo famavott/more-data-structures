@@ -102,3 +102,9 @@ Time Complexity: 0(n^2)
 merge_sort(input_list): Recursively sorts through the first half of the input list, then resursively sorts through the second half. The sub-lists are then merged together, in order, to create an output list.
 
 Time Complexity: 0(n log(n))
+
+## Quick Sort
+
+quick_sort(input_list): Picks the first element as the pivot point, and partitions the list around the value of the pivot. These steps are recursively applied to the sub-lists until the entire list is in sorted order.
+
+Time Complexity: 0(n^2)
