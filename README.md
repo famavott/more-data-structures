@@ -108,3 +108,10 @@ Time Complexity: 0(n log(n))
 quick_sort(input_list): Picks the first element as the pivot point, and partitions the list around the value of the pivot. These steps are recursively applied to the sub-lists until the entire list is in sorted order.
 
 Time Complexity: 0(n^2)
+
+## Radix Sort
+
+radix(input_list): Sorts interger keys by grouping keys based on their individual digits which share the same significant position and value. Returns the list in sorted order.
+
+Time Complexity: 0(n^2)
+
